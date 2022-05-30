@@ -1,0 +1,21 @@
+
+    
+def findClosestElements(arr, k, x):
+    res = [arr[i] for i in range(k)]
+    if k == len(arr):
+        return res
+    i = k - 1
+    j = 0
+    while i +1< len(arr):
+        print("1: ",abs(arr[i] - x))
+        print("2: ",abs(arr[i+1] - x))
+        print("3: ",arr[i])
+        if abs(arr[i] - x) < abs(arr[j] - x):
+            return res
+        res.pop(0)
+        res.append(arr[i+1])
+        j = j + 1
+        i = i + 1 
+    return res
+print (findClosestElements([1,2,3,4,5], 3, 4))
+
